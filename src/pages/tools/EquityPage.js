@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
 import { calculateEquity } from 'poker-odds'
+
+import PlayingCard from '../../components/PlayingCard'
 
 
 const hands = [['As', 'Kh'], ['Kd', 'Qs']]
@@ -42,6 +43,10 @@ class EquityPage extends Component {
         <header className="App-header">
           <p>
             <strong>{hands[0]}</strong> &nbsp;&nbsp; <small>vs</small> &nbsp;&nbsp; <strong>{hands[1]}</strong>
+
+            <PlayingCard name="Ah" />
+            <PlayingCard name="Jh" />
+
             <br /><br />
             Board: <strong>{board}</strong>
             <br /><br /><br />

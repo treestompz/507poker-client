@@ -8,7 +8,7 @@ class PlayingCard extends Component {
     let { name, width } = this.props
 
     if(!width) {
-      width = 70
+      width = 90
     }
 
     return (

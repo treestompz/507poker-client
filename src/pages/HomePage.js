@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 class HomePage extends Component {
@@ -7,7 +8,9 @@ class HomePage extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Home Page</h1>
+          <h1>507poker</h1>
+
+          <Link to="/tools/equity">Equity</Link>
 
         </header>
       </div>

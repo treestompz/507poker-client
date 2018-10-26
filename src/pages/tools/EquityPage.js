@@ -18,14 +18,17 @@ class EquityPage extends Component {
     }
   }
 
-  componentDidMount() {
-
-    const equities = calcEquity(['Ah', 'Kh'], ['2d', '2c'], ['7h', '9h', '2s'])
-
-    this.setState({
-      heroWinPercent: equities.heroWinPercent,
-      villainWinPercent: equities.villainWinPercent
-    })
+  updateEquities(equities) {
+    if(this.state.heroWinPercent !== equities.heroWinPercent) {
+      this.setState({
+        heroWinPercent: equities.heroWinPercent
+      })
+    }
+    if(this.state.villainWinPercent !== equities.villainWinPercent) {
+      this.setState({
+        villainWinPercent: equities.villainWinPercent
+      })
+    }
   }
 
   render() {
@@ -44,12 +47,26 @@ class EquityPage extends Component {
                 const heroHand = parsePlayerHand(formState.values.heroHand)
                 const villainHand = parsePlayerHand(formState.values.villainHand)
 
+                if(heroHand !== null && villainHand !== null) {
+                  const equities = calcEquity(heroHand, villainHand, ['7h', '9h', '2s'])
+
+                  this.updateEquities(equities)
+                }
+
                 return (
                   <div>
                     <Hand hand={heroHand} />
                     <Hand hand={villainHand} />
                     <Text className="form-control" field="heroHand" id="heroHand"/>
                     <Text className="form-control" field="villainHand" id="villainHand"/>
+
+                    <br /><br />
+                    {/* Board: <strong>{board}</strong> */}
+                    <br /><br /><br />
+                    Hero equity is: {this.state.heroWinPercent === null ? "???" : this.state.heroWinPercent}%
+                    <br />
+                    Villain equity is: {this.state.villainWinPercent === null ? "???" : this.state.villainWinPercent}%
+
                   </div>
                 )
 
@@ -59,12 +76,7 @@ class EquityPage extends Component {
 
 
 
-            <br /><br />
-            {/* Board: <strong>{board}</strong> */}
-            <br /><br /><br />
-            Hero equity is: {this.state.heroWinPercent}%
-            <br />
-            Villain equity is: {this.state.villainWinPercent}%
+
           </p>
 
         </header>

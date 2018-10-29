@@ -7,18 +7,28 @@ class Hand extends Component {
 
   render() {
 
-    let { hand } = this.props
+    let { hand, width } = this.props
 
-    if(!hand) {
-      return null
+    if(!width) {
+      width = 90
     }
 
-    return (
-      <React.Fragment>
-        <PlayingCard name={hand[0]} />
-        <PlayingCard name={hand[1]} />
-      </React.Fragment>
-    )
+    if(hand !== null) {
+      return (
+        <>
+          <PlayingCard name={hand[0]} width={width} />
+          <PlayingCard name={hand[1]} width={width} />
+        </>
+      )
+    } else {
+      return (
+        <>
+          <PlayingCard name="RED_BACK" width={width} />
+          <PlayingCard name="RED_BACK" width={width} />
+        </>
+      )
+    }
+
   }
 
 }

@@ -7,12 +7,9 @@ class HomePage extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>507poker</h1>
-
-          <Link to="/tools/equity">Equity</Link>
-
-        </header>
+        <h1>507poker</h1>
+        <Link to="/tools/equity">Equity</Link>
+        <Link to="/tools/pot-odds">Pot Odds</Link>
       </div>
     )
   }

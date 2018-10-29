@@ -53,3 +53,27 @@ export const parseCard = (input) => {
   return null
 
 }
+
+
+export const parseBoard = (input) => {
+
+  if(!input || input.length === 0) {
+    return null
+  }
+
+  let board = []
+
+  // splits string by every 2 characters
+  let cardArr = input.match(/.{1,2}/g)
+
+  for(let i = 0; i < cardArr.length; i++) {
+    let card = parseCard(cardArr[i])
+
+    if(card) {
+      board.push(card)
+    }
+  }
+
+  return board
+
+}

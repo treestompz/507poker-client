@@ -12,7 +12,7 @@ class PlayingCard extends Component {
     }
 
     if(!width) {
-      width = 90
+      width = 70
     }
 
     return (

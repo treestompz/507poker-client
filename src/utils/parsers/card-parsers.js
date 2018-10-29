@@ -22,7 +22,7 @@ export const parsePlayerHand = (input) => {
   }
 
   // Ah7s
-  if(input.length == 4) {
+  if(input.length === 4) {
 
     let cardOne = parseCard(input.slice(0,2))
     let cardTwo = parseCard(input.slice(2,4))

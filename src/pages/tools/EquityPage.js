@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Layout from '../Layout'
 import PokerTable from '../../components/PokerTable'
 import { calcEquity } from '../../utils/calculators/equity-calculator'
-import { parsePlayerHand } from '../../utils/parsers/card-parsers'
 
 
 class EquityPage extends Component {

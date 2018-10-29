@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import Hand from './Hand'
-import PlayingCard from './PlayingCard'
 import Board from './Board'
 import { parsePlayerHand, parseBoard } from '../utils/parsers/card-parsers'
 
@@ -18,7 +17,6 @@ class PokerTable extends Component {
     super()
 
     this.state = {
-      formState: null,
       board: null,
       heroHand: null,
       villainHand: null,

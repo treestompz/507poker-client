@@ -53,8 +53,13 @@ class PotOddsPage extends Component {
           Call Amount:{' '}
           <input type="text" name="callAmount" value={this.state.callAmount} onChange={this.handleChange.bind(this)}/>
           <br/><br/>
+
+          {this.state.callAmount !== null && this.state.potSize !== null && (
+            <p>Math: {this.state.callAmount} / ({this.state.potSize} + {this.state.callAmount})</p>
+          )}
+
           <p>
-            Your pot odds are {this.state.oddsAsRatio === null ? "???" : this.state.oddsAsRatio} or {this.state.oddsAsPercent === null ? "???" : this.state.oddsAsPercent}%
+            Your pot odds are <strong>{this.state.oddsAsRatio === null ? "???" : this.state.oddsAsRatio}</strong> or <strong>{this.state.oddsAsPercent === null ? "???" : this.state.oddsAsPercent}%</strong>
           </p>
 
         </div>

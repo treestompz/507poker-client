@@ -7,11 +7,12 @@ export const calcPotOdds = (pot, call) => {
     return null
   }
 
-  const percent = ((call / pot) * 100).toFixed(2)
+  pot = parseFloat(pot)
+  call = parseFloat(call)
 
-  const percentRounded = ((call / pot) * 100).toFixed(0)
+  const percent = ((call / (pot + call)) * 100).toFixed(2)
 
-  console.log("pr",percentRounded)
+  const percentRounded = ((call / (pot + call)) * 100).toFixed(0)
 
   const fraction = new Fraction(percentRounded / 100)
 

@@ -47,7 +47,7 @@ class PotOddsPage extends Component {
           <h1>Pot Odds</h1>
           <br />
 
-          Pot Size:{' '}
+          Pot Size (after villain bet:){' '}
           <input type="text" name="potSize" value={this.state.potSize} onChange={this.handleChange.bind(this)}/>
           <br /><br />
           Call Amount:{' '}
